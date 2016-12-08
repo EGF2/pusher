@@ -1,0 +1,17 @@
+{
+  "port": 2017,
+  "web_socket_port": 2000,
+  "email_transport": "sendgrid",
+  "log_level": "info",
+  "client-data": "http://localhost:8000",
+  "auth": "http://127.0.0.1:2016",
+  "template_host": "",
+  "ignored_domains": [],
+  "queue": "rethinkdb",
+  "consumer-group": "pusher",
+  "rethinkdb": {
+    "db": "eigengraph",
+    "table": "events",
+    "offsettable": "event_offset"
+  }
+}

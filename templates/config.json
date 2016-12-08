@@ -1,0 +1,20 @@
+{
+  "emails": {
+    "confirm_email": {
+      "subject": "Please confirm your email",
+      "template": "confirm_email.html",
+      "params": [
+        "name",
+        "verifyToken"
+      ]
+    },
+    "forgot_password": {
+      "subject": "Reset your password",
+      "template": "forgot_password.html",
+      "params": [
+        "name",
+        "resetToken"
+      ]
+    }
+  }
+}

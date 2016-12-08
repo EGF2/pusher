@@ -1,0 +1,29 @@
+{
+  "name": "pusher",
+  "version": "0.0.1",
+  "description": "Send email, web socket notifications",
+  "main": "index.js",
+  "dependencies": {
+    "bunyan": "^1.8.5",
+    "commons": "git+https://github.com/EGF2/commons.git",
+    "lodash": "^4.17.2",
+    "primus": "^4.0.4",
+    "primus-rooms": "^3.4.1",
+    "restify": "^4.3.0",
+    "sendgrid": "^2.0.0",
+    "swig": "^1.4.2",
+    "ws": "^1.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-xo": "^0.17.0",
+    "gulp": "^3.9.1",
+    "gulp-mjml": "^2.0.0"
+  },
+  "scripts": {
+    "start": "node index.js --config config.json",
+    "lint": "eslint .",
+    "compile-templates": "gulp compile-templates"
+  },
+  "license": "MIT"
+}
