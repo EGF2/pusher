@@ -1,6 +1,6 @@
 {
   "name": "pusher",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Send email, web socket notifications",
   "main": "index.js",
   "dependencies": {
