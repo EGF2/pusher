@@ -1,12 +1,17 @@
 "use strict";
 
 const clientData = require("../components").clientData;
+const services = require("../services");
 
 // add "<method> <object or edge>": <handler>
 const handleRegistry = {
 };
 
 function eventHandler(event) {
+    if (services.websocket) {
+        services.websocket.handleEvent(event);
+    }
+
     return Promise.resolve(event.method).then(method => {
         if (event.object) {
             if (event.current) {
