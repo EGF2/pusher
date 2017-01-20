@@ -41,14 +41,14 @@ primus.on("connection", spark => {
         if (data.subscribe) {
             data.subscribe.forEach(subscribe => {
                 let path = subscribe.object_id ||
-                    `${subscribe.edge.source}\${subscribe.edge.name}`;
+                    `${subscribe.edge.source}/${subscribe.edge.name}`;
                 resolver[path] = resolver[path] || {};
                 resolver[path][spark.request.session.user] = true;
             });
         } else if (data.unsubscribe) {
             data.unsubscribe.forEach(unsubscribe => {
                 let path = unsubscribe.object_id ||
-                    `${unsubscribe.edge.source}\${unsubscribe.edge.name}`;
+                    `${unsubscribe.edge.source}/${unsubscribe.edge.name}`;
                 if (resolver[path]) {
                     delete resolver[path][spark.request.session.user];
                     if (Object.keys(resolver[path]).length === 0) {
@@ -69,7 +69,7 @@ server.listen(config.web_socket_port, () => {
 });
 
 function handleEvent(event) {
-    let subscription = event.object || `${event.edge.src}\${event.edge.name}`;
+    let subscription = event.object || `${event.edge.src}/${event.edge.name}`;
     if (subscription in resolver) {
         primus.in(Object.keys(resolver[subscription]).join(" ")).write(event);
     }
