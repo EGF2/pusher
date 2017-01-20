@@ -41,7 +41,7 @@ primus.on("connection", spark => {
         if (data.subscribe) {
             data.subscribe.forEach(subscribe => {
                 let path = subscribe.object_id ||
-                    `${subscriber.edge.source}\${subscriber.edge.name}`;
+                    `${subscribe.edge.source}\${subscribe.edge.name}`;
                 resolver[path] = resolver[path] || {};
                 resolver[path][spark.request.session.user] = true;
             });
