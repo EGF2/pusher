@@ -6,6 +6,7 @@
   "dependencies": {
     "bunyan": "^1.8.5",
     "commons": "git+https://github.com/EGF2/commons.git",
+    "dotenv": "^5.0.0",
     "lodash": "^4.17.2",
     "primus": "^4.0.4",
     "primus-rooms": "^3.4.1",
