@@ -3,7 +3,6 @@
 const option = require("commons/option");
 const bunyan = require("bunyan");
 const sendgrid = require("sendgrid");
-require("dotenv").config();
 
 function init() {
     return option().config.then(config => {
