@@ -18,6 +18,8 @@ components.init().then(comp => {
         server.use(restify.bodyParser());
         server.use(restify.requestLogger());
 
+        server.get("/healthcheck", (req, res) => res.send(200));
+
         server.post("/v1/internal/send_email", (req, res, next) => {
             try {
                 services.sendEmail(req.params)
